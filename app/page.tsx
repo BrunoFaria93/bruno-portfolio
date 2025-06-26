@@ -385,28 +385,59 @@ export default function Portfolio() {
               <div className="space-y-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Bacharelado em Ciência da Computação</CardTitle>
+                    <CardTitle>
+                      Pós-graduação Desenvolvimento Full Stack
+                    </CardTitle>
                     <CardDescription>
-                      Universidade XYZ • 2018 - 2022
+                      Descomplica • 2025 - atualmente
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">
-                      Formação sólida em programação, algoritmos, estruturas de
-                      dados e engenharia de software.
+                      O curso de Análise e Desenvolvimento de Sistemas da
+                      UNINASSAU Digital forma profissionais versáteis e
+                      preparados para o mercado de TI. Com parcerias com
+                      empresas como Google e Microsoft, oferece acesso a
+                      certificações e experiências práticas. A graduação
+                      possibilita atuação em diversas áreas, como
+                      desenvolvimento, ciência de dados e empreendedorismo.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>
+                      Superior de Tecnologia em Análise e Desenvolvimento de
+                      Sistemas
+                    </CardTitle>
+                    <CardDescription>Uninassau • 2022 - 2024</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      O curso de Análise e Desenvolvimento de Sistemas da
+                      UNINASSAU Digital forma profissionais versáteis e
+                      preparados para o mercado de TI. Com parcerias com
+                      empresas como Google e Microsoft, oferece acesso a
+                      certificações e experiências práticas. A graduação
+                      possibilita atuação em diversas áreas, como
+                      desenvolvimento, ciência de dados e empreendedorismo.
                     </p>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Curso de UX/UI Design</CardTitle>
-                    <CardDescription>Instituto ABC • 2021</CardDescription>
+                    <CardTitle>Curso de Desenvolvimento Full Stack</CardTitle>
+                    <CardDescription>
+                      Kenzie Academy Brasil • 2021 - 2022
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600">
-                      Especialização em design de experiência do usuário e
-                      interfaces digitais.
+                      Curso de Desenvolvimento Full Stack com 2.000 horas
+                      cobrindo tanto tecnologias Front End quanto de Back End,
+                      além de habilidades interpessoais relevantes para o
+                      mercado de trabalho.
                     </p>
                   </CardContent>
                 </Card>
