@@ -597,7 +597,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-emerald-600" />
-                      (85) 9605-6772
+                      (85)99605-6772
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-emerald-600" />
