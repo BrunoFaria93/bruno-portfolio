@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
+  experimental: {
+    // 🔥 isso aqui desativa o overlay "N" do App Router
+    instrumentationHook: false,
+  },
+};
 
-export default nextConfig
+export default nextConfig;

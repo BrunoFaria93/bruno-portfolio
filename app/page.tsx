@@ -297,48 +297,25 @@ const translations = {
     },
   },
 };
-
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(false); // tema branco por padrão
   const [language, setLanguage] = useState<"pt" | "en">("pt");
-  const [hasMounted, setHasMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true);
+    setMounted(true);
 
+    const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    setIsDark(prefersDark);
+    const dark = saved === "dark" || (!saved && prefersDark);
 
-    const handleScroll = () => {
-      const sections = ["home", "about", "resume", "projects"];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setIsDark(dark);
+    document.documentElement.classList.toggle("dark", dark);
   }, []);
-
-  if (!hasMounted) return null;
 
   const t = translations[language];
 
@@ -348,7 +325,13 @@ export default function Portfolio() {
     setIsMenuOpen(false);
   };
 
-  const toggleDarkMode = () => setIsDark(!isDark);
+  const toggleDarkMode = () => {
+    const next = !isDark;
+    setIsDark(next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", next);
+  };
+  if (!mounted) return null;
   const toggleLanguage = () => setLanguage(language === "pt" ? "en" : "pt");
 
   const downloadCV = () => {
@@ -365,6 +348,7 @@ export default function Portfolio() {
     link.click();
     document.body.removeChild(link);
   };
+
   return (
     <div
       className={`min-h-screen transition-colors duration-300 ${
